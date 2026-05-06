@@ -1,0 +1,30 @@
+:root {
+  --primary-color: #00e5ff;
+  --secondary-color: #0077ff;
+  --bg-color: #050510;
+  --surface-color: rgba(20, 20, 35, 0.6);
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(circle at 50% 50%, #0a0a20 0%, #000000 100%);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
