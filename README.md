@@ -1,6 +1,6 @@
 # Prototipo Alexa Web: Asistente Virtual Inteligente
 
-Este proyecto es una evolución moderna de un asistente de voz básico en Python, transformado en una aplicación web interactiva con una arquitectura de microservicios, una interfaz visual inspirada en Alexa y procesamiento de lenguaje natural.
+Este proyecto es una evolución moderna de un asistente de voz básico en Python, transformado en una aplicación web interactiva con una arquitectura moderna, una interfaz visual inspirada en Alexa y procesamiento de lenguaje natural.
 
 ---
 
