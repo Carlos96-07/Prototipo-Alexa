@@ -1,37 +1,125 @@
-# Asistente Virtual por Voz en Python
+# 🎙️ Prototipo Alexa Web: Asistente Virtual Inteligente
 
-Este proyecto implementa un **asistente virtual por comandos de voz** usando Python. Reconoce instrucciones habladas en español y responde con voz, además de ejecutar acciones como abrir sitios web o decir la hora actual.
+![Modern UI](https://img.shields.io/badge/Aesthetics-Premium-blueviolet)
+![React](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react)
+![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi)
+![Vite](https://img.shields.io/badge/Build-Vite-646CFF?logo=vite)
 
----
-
-## Características
-
-- Reconocimiento de voz en español (Google Speech Recognition).
-- Respuestas habladas usando `pyttsx3`.
-- Abre páginas como YouTube, Google, Netflix, GitHub, Spotify, HBO.
-- Informa la hora actual al decir: `"Computador, ¿qué hora es?"`
-- Activación personalizada por palabra clave (por defecto: **"computador"**).
-- Cierre del asistente con frases como: `"termina"` o `"terminó"`.
+Este proyecto es una evolución moderna de un asistente de voz básico en Python, transformado en una aplicación web interactiva con una arquitectura de microservicios, una interfaz visual inspirada en Alexa y procesamiento de lenguaje natural.
 
 ---
 
-## Estructura del Código
+## ✨ Características Principales
 
-- `say(text)`: Función para convertir texto en voz.
-- `while True`: Bucle principal de escucha.
-- `speech_recognition`: Para detectar comandos hablados.
-- `subprocess`: Ejecuta comandos del sistema (abrir Chrome).
-- `datetime`: Obtener hora actual del sistema.
+- **Activación por Voz ("Wake Word"):** Responde de manera inteligente al comando "Alexa" o "Computadora" utilizando la **Web Speech API**.
+- **Interfaz Visual Premium:** Anillo interactivo animado con CSS dinámico que cambia de estado (Inactivo, Escuchando, Procesando, Hablando) con efectos de ondas y resplandor.
+- **Arquitectura Robusta:** Backend desarrollado con **FastAPI** siguiendo el patrón de diseño "Clean Architecture" para una escalabilidad profesional.
+- **Acciones Inteligentes:**
+  - Búsqueda directa en YouTube y Spotify.
+  - Navegación a sitios populares (GitHub, Netflix, HBO).
+  - Búsqueda avanzada en Google.
+  - Reporte de hora en tiempo real.
+- **LLM Ready (Placeholder):** Estructura preparada para integrar modelos de lenguaje (OpenAI, Anthropic) mediante un servicio dedicado con manejo de API Keys.
+- **Comunicación en Tiempo Real:** Uso de **WebSockets** para una interacción fluida y sin latencia entre el cliente y el servidor.
 
 ---
 
-## Requisitos
+## 🛠️ Tecnologías Utilizadas
 
-Instala las siguientes bibliotecas antes de ejecutar:
+### Frontend
+- **React 19** + **Vite**: Para una interfaz de usuario reactiva y rápida.
+- **Web Speech API**: Para reconocimiento (STT) y síntesis de voz (TTS) directamente en el navegador.
+- **Vanilla CSS**: Animaciones avanzadas y diseño "Glassmorphism".
+- **Zustand**: Gestión de estado (preparado).
 
+### Backend
+- **FastAPI**: Framework de alto rendimiento para la API y WebSockets.
+- **Python-dotenv**: Manejo seguro de configuraciones y secretos.
+- **Uvicorn**: Servidor ASGI para producción.
+
+---
+
+## 🚀 Instalación y Configuración
+
+### Requisitos Previos
+- Node.js (v20.18.0 o superior)
+- Python 3.10 o superior
+
+### 1. Clonar el Repositorio
 ```bash
-pip install pyttsx3
-pip install pyaudio
-pip install SpeechRecognition
+git clone https://github.com/tu-usuario/Prototipo-Alexa.git
+cd Prototipo-Alexa
+```
 
-Nota: En algunos sistemas, puede ser necesario instalar PyAudio con wheels:
+### 2. Configuración del Backend
+```bash
+cd Back-End
+pip install -r requirements.txt
+# (Opcional) Crea un archivo .env
+# LLM_API_KEY=tu_api_key_aqui
+uvicorn app.main:app --reload
+```
+
+### 3. Configuración del Frontend
+```bash
+cd ../Front-End
+npm install
+npm run dev
+```
+
+---
+
+## 🎤 Cómo usar el Asistente
+
+1. Abre `http://localhost:5173` en tu navegador (recomendado Google Chrome).
+2. Otorga permisos para usar el micrófono.
+3. El anillo estará en modo **Idle** (Azul suave).
+4. Di la palabra clave: **"Alexa"** o **"Computadora"**.
+5. Cuando el anillo brille en **Cyan**, di tu comando. Ejemplos:
+   - *"Busca música relajante en YouTube"*
+   - *"Pon a Taylor Swift en Spotify"*
+   - *"¿Qué hora es?"*
+   - *"Abre GitHub"*
+   - *"Busca cómo hacer una tortilla española"*
+
+---
+
+## 📂 Estructura del Proyecto
+
+```text
+Prototipo-Alexa/
+├── Back-End/                # Lógica del Servidor
+│   ├── app/
+│   │   ├── api/            # Controladores de WebSockets
+│   │   ├── core/           # Configuraciones y Variables de Entorno
+│   │   ├── services/       # Lógica de Negocio (Intents y LLM)
+│   │   └── main.py         # Punto de entrada
+│   └── requirements.txt
+├── Front-End/               # Aplicación React
+│   ├── src/
+│   │   ├── components/     # UI Components (AlexaRing)
+│   │   ├── hooks/          # Lógica de Voz y Sockets
+│   │   ├── App.jsx         # Integración Principal
+│   │   └── index.css       # Estilos Globales y Premium
+│   └── package.json
+└── README.md
+```
+
+---
+
+## 🎯 Objetivo del Proyecto
+Este proyecto fue diseñado para demostrar habilidades en:
+- Desarrollo Fullstack con tecnologías modernas.
+- Implementación de sistemas de voz en tiempo real.
+- Diseño de interfaces atractivas y funcionales.
+- Prácticas de código limpio y arquitectura escalable.
+
+---
+
+## ✒️ Autor
+**Tu Nombre / Carlos**
+- [LinkedIn](https://www.linkedin.com/in/tu-perfil/)
+- [Portafolio](https://tu-web.com)
+
+---
+*Nota: Este proyecto es un prototipo funcional para portafolio.*
