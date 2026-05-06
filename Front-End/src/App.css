@@ -1,0 +1,119 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+/* Glassmorphism Card for Transcript */
+.transcript-card {
+  position: absolute;
+  bottom: 10%;
+  background: var(--surface-color);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+  border-radius: 24px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.transcript-card p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+.transcript-card .user-text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.transcript-card .assistant-text {
+  color: var(--text-primary);
+}
+
+.controls {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #555;
+}
+
+.status-dot.connected {
+  background-color: #00ff88;
+  box-shadow: 0 0 8px #00ff88;
+}
+
+.status-dot.disconnected {
+  background-color: #ff3366;
+  box-shadow: 0 0 8px #ff3366;
+}
+
+/* MIC BUTTON */
+.mic-btn {
+  position: absolute;
+  bottom: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.mic-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.mic-btn.active {
+  background: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+.mic-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
